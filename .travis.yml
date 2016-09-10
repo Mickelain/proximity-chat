@@ -1,3 +1,14 @@
 language: node_js
 node_js:
-  - 0.12.2
+- 0.12.2
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: mclain.calvin@gmail.com
+  password:
+    secure: Bp5otpdAA6NttFEceHbfSXMB6TCRK7k7vDz47+DnsQQibL/TaZuRwqbuyBp68AaBbmU6lTocKwDVMYWVLAtMKBGhe8WJAuU+2dy4C32pYMhvR21I3XO0KZ9/Dgv+ye6CbgyOTPYg5G68IrCazpqL1UHjMhdbEJdP5ARr834W5hRoKjdXIAMnThQ08VnfaHxsz3OmlvcVQwRlFA7yOklwLvvB199SINdv0eceTkX5Ui5Frsm2hd25KG0It8wRLH2V644LrwrHsEuMmwigrbPKhfejCBS5FMg1kRcAChD7szhXAFnv3EKJV8ShPndv4DMJ32GLSwZYJEMejhH+bXPTN5OfL//YcCLj5Q1qu1m1+7+kWmccbRFZ7JPRGT+vz7xkSuKLqob+9j94sytP+g8+tzv8gK7eUhec/e7146M3yfPBMFSZnFSmnuTWmHkWFS67omeCzgZUaFJSGVR2oS8oVQ2bZ/3Cx3/xaL12T/tbUEB7tXcE5qrfdquXmPddhP8qYQhxdKObWOdf5NLPpXZ/ke/JAym1QV2Fsq53If6r97XiO/h0H6b33IRBJyTYeNDtvpMxi+NaRpfIi6hwp7wJkv4O63ItoMqC3TZxbnjnOdyW4GAbIAV3y3Fj1fW0++MZil0DQoqY8TWQBxAUeh6zgAcjkGmAVYxyj1MntdSKJWo=
+  organization: mclain.calvin-org
+  space: development
+  on:
+    repo: Mickelain/proximity-chat
+  edge: true
