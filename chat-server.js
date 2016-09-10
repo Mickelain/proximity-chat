@@ -19,7 +19,11 @@ var chatServer = function(server) {
         // On message send
         socket.on('chat message', function(msg) {
             io.emit('chat message', msg);
-        })
+        });
+
+        socket.on('echo', function(msg) {
+            socket.emit('echo', msg);
+        });
     });
 };
 
