@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "test": "./node_modules/jshint/bin/jshint app.js --verbose --show-non-errors"
+    "test": "./node_modules/jshint/bin/jshint app.js"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
