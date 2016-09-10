@@ -9,7 +9,7 @@ var ioc = require('socket.io-client');
 var socketURL = 'http://localhost:5000';
 
 var options ={
-    transports: ['websocket'],
+    transports: ['websocket']
     'force new connection': true
 };
 
