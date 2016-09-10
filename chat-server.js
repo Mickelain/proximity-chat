@@ -9,6 +9,7 @@
 var chatServer = function(server) {
     var io = require('socket.io').listen(server);
     io.on('connection', function(socket){
+        var user = {'name': ""};
         console.log('a user connected');
 
         // On disconnect
@@ -18,11 +19,18 @@ var chatServer = function(server) {
 
         // On message send
         socket.on('chat message', function(msg) {
-            io.emit('chat message', msg);
+            io.emit('chat message', {'content':msg, 'user':user});
         });
 
+        // On simple echo test
         socket.on('echo', function(msg) {
             socket.emit('echo', msg);
+        });
+
+        // On name change
+        socket.on('name change', function(newName){
+            user.name = newName;
+            socket.emit('name change', user.name);
         });
     });
 };
