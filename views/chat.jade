@@ -4,13 +4,13 @@ extends layout.jade
 
 block content
     h1= title
+    input#username(placeholder="Username")
     ul#messages
     div#divCompose
     form(action="")
-        input#m(autocomplete="off")
+        input#m(autocomplete="off" placeholder="Press Enter to Send")
         button Send
     script(src="/socket.io/socket.io.js")
-    script(src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous")
     script.
         var socket = io();
         $('form').submit(function() {
@@ -20,4 +20,7 @@ block content
         });
         socket.on('chat message', function(msg){
             $('#messages').append($('<li>').text(msg.user.name + ': ' + msg.content));
+        });
+        $('#username').blur(function() {
+            socket.emit('name change', $('#username').val());
         });
