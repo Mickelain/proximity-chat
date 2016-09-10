@@ -4,7 +4,6 @@
 var io = require('../chat-server')(5000);
 var should = require('should');
 var ioc = require('socket.io-client');
-// var mocha = require('mocha');
 
 var socketURL = 'http://localhost:5000';
 
@@ -29,5 +28,5 @@ describe('Chat server', function(){
         });
 
         client.emit("echo", "Hello World");
-    })
+    });
 });
